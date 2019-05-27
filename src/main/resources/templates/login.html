@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" th:src="@{/js/jquery-1.12.0.min.js}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript">
+        function doLogin(){
+            var email = $("#email");
+            var password = $("#password");
+            var isLogin = true;
+
+            if(email.val().trim() === "" || email.length < 1){
+                alert('Please enter your email');
+                email.focus();
+                isLogin = false;
+                return isLogin;
+            }
+            if(password.val().trim() === "" || password.length < 1){
+                alert('Please enter your password');
+                password.focus();
+                isLogin = false;
+                return isLogin;
+            }
+            if (isLogin === true) {
+               $('form').submit();
+            }
+        }
+    </script>
+    <title>Login</title>
+</head>
+<div style="height:100px"></div>
+<body><!--onsubmit="doLogin();return false;"-->
+<!--/*@thymesVar id="loginVO" type="io.sangwon.board.form.LoginForm"*/-->
+<div class="container">
+<form th:action="@{/login}" th:method="post" th:object="${loginVO}" onSubmit="doLogin();return false;">
+   <div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<input th:field="*{email}" id="email" type="text" class="form-control" name="email" placeholder="Email">
+</div>
+    <p th:errors="*{email}" class="alert alert-danger"></p>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input th:field="*{password}" id="password" type="password" class="form-control" name="password" placeholder="Password">
+</div>
+    <p th:errors="*{password}" class="alert alert-danger"></p>
+    <button class="btn btn-primary">Login</button>
+</form>
+<a th:href="@{/join}">Join Sangwon Company</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" th:src="@{/js/jquery-1.12.0.min.js}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript">
+
+        $(function () {
+
+        });
+
+        function doCheckEmailAndPassword() {
+            var email = $("#email");
+            var password = $("#password");
+            var confirm_password = $("#confirmPassword");
+            var name = $("#name");
+            var isCheck = true;
+
+            if (email.val().trim() === "" || email.val().length < 1) {
+                alert('Please enter your E-mail');
+                email.focus();
+                isCheck = false;
+                return isCheck;
+            }
+            if (name.val().trim() === "" || name.val().length < 1) {
+                alert('Please enter your name');
+                name.focus();
+                isCheck = false;
+                return isCheck;
+            }
+            if (password.val().trim() === "" || password.val().length < 1) {
+                alert('Please enter your password');
+                password.focus();
+                isCheck = false;
+                return isCheck;
+            }
+            if (confirm_password.val().trim() === "" || confirm_password.val().length < 1) {
+                alert('Please enter your password');
+                confirm_password.focus();
+                isCheck = false;
+                return isCheck;
+            }
+
+            if (isCheck === true) {
+               $('form').submit();
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div style="height:100px"></div>
+<div class="container">
+    <h2>Sangwon Company Join</h2></br>
+    <!--/*@thymesVar id="formVO" type="io.sangwon.board.form.RegisterForm"*/-->
+    <form th:action="@{/join}" th:method="post" th:object="${formVO}" onsubmit="doCheckEmailAndPassword();return false;">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input th:field="*{email}" type="text" class="form-control" id="email" placeholder="Enter Email" name="email"> <br/>
+            <p th:errors="*{email}" class="alert alert-danger"></p>
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Enter Name" name="userName"> <br/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input th:field="*{password}" type="password" class="form-control" id="password" placeholder="Enter password" name="password"> <br/>
+            <p th:errors="*{password}" class="alert alert-danger"></p>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Re Password:</label>
+            <input th:field="*{confirmPassword}" type="password" class="form-control" id="confirmPassword" placeholder="Enter Re password" name="c_password"> <br/>
+            <p th:errors="*{confirmPassword}" class="alert alert-danger"></p>
+        </div>
+        <button type="submit" class="btn btn-primary">Join</button>
+    </form>
+</div>
+
+</body>
+</html>
+
