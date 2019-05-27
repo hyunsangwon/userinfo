@@ -47,7 +47,7 @@ class LoginController(val userService:UserService){
             return ModelAndView("login")
         }
 
-        return ModelAndView("redirect:/main/list")
+        return ModelAndView("redirect:/user/list")
     }
 
     @GetMapping("/join")

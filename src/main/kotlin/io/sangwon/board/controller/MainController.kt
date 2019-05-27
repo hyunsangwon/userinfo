@@ -4,6 +4,7 @@ import io.sangwon.board.model.UserInfo
 import io.sangwon.board.service.UserService
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.servlet.ModelAndView
 
@@ -12,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView
  * bizblocks.io
  */
 @Controller
-@RequestMapping("/main")
+@RequestMapping("/user")
 class MainController(val userService: UserService) {
 
     @GetMapping("/list")
@@ -29,4 +30,12 @@ class MainController(val userService: UserService) {
             addObject("userInfo",userInfo)
         }
     }
+
+    @GetMapping("/edit/{userNo}")
+    fun showEdit(@PathVariable("userNo") userNo : Int): ModelAndView{
+        return ModelAndView("edit").apply {
+            addObject("userNo",userNo)
+        }
+    }
+
 }
