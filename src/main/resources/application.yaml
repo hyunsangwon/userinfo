@@ -4,13 +4,16 @@ spring:
     url: jdbc:mysql://localhost:3306/user?useUnicode=true&charaterEncoding=utf-8&serverTimezone=UTC
     username: root
     password: tkddnjs0823
+
   jpa:
     hibernate.ddl.auto: update
     generate-ddl: true
     show-sql: true
+
   thymeleaf:
     cache: false
     mode: HTML
+
   devtools:
     livereload:
       enabled: true
@@ -18,3 +21,9 @@ spring:
     restart:
       enabled: true
       poll-interval: 1s
+
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true

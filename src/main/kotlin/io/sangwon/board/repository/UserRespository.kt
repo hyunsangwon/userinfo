@@ -15,5 +15,4 @@ interface UserRespository : JpaRepository<UserInfo,Int>{
     /*row가 0일 수도 있으니 null허용인 ?도 해주자.*/
     fun findByEmail(email:String):UserInfo?
 
-
 }

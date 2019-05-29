@@ -33,6 +33,11 @@ class MainController(val userService: UserService) {
 
     @GetMapping("/edit/{userNo}")
     fun showEdit(@PathVariable("userNo") userNo : Int): ModelAndView{
+        /*
+        * userNo
+        * */
+
+
         return ModelAndView("edit").apply {
             addObject("userNo",userNo)
         }

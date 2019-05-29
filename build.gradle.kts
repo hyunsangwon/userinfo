@@ -48,6 +48,17 @@ repositories {
 }
 
 dependencies {
+
+	val graphqlJavaToolsSpringVersion = "5.8.1"
+	val graphqlJavaToolsVersion = "5.6.0"
+	/*graphql-spring-boot-starter: GraphQL 서버를 매우 짧은 시간에 실행 가능하게 만드는 쉬운 방법을 제공
+	* graphql-java-tools: 동적 해석기 배선을 쉽게하기 위해 graphql-java-tools도 사용해야합니다.?!
+	* graphiql-spring-boot-starter : GraphQL UI 인터페이스 제공 (응용 프로그램에서 사용하려면 추가)
+	* */
+	implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:$graphqlJavaToolsSpringVersion")
+	implementation("com.graphql-java-kickstart:graphql-java-tools:$graphqlJavaToolsVersion")
+	implementation("com.graphql-java-kickstart:graphiql-spring-boot-starter:$graphqlJavaToolsVersion")
+
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

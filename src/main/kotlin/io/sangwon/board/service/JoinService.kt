@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service
 @Service
 class UserService(val userRespository: UserRespository){
 
-
     fun signUp(form : RegisterForm):UserInfo{
         val user = UserInfo().apply{
             email = form.email
@@ -28,9 +27,10 @@ class UserService(val userRespository: UserRespository){
         return userRespository.findByEmail(email)
     }
 
-
     fun userFindAll():List<UserInfo>?{
         return userRespository.findAll()
     }
+
+
 
 }

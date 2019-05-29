@@ -27,14 +27,13 @@
             <td colspan=4>No! user data</td>
         </tr>
         <tr th:unless="${userInfoLength} == '0'" th:each="user : ${userInfo}">
-            <th th:text="${user.id}">1</th>
-            <th th:text="${user.email}">brian@gmail.com</th>
-            <th th:text="${user.name}">Brian</th>
-            <th th:text="${#temporals.format(user.createdAt,'yyyy-MM-dd')}">2019-05-13</th>
+            <td><a th:href="@{'/user/edit/'+${user.id}}" th:text="${user.id}"></a></td>
+            <td th:text="${user.email}">brian@gmail.com</td>
+            <td th:text="${user.name}">Brian</td>
+            <td th:text="${#temporals.format(user.createdAt,'yyyy-MM-dd')}">2019-05-13</td>
         </tr>
         </tbody>
     </table>
 </div>
-
 </body>
 </html>
