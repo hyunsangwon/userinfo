@@ -1,0 +1,27 @@
+### simple graphql schema
+## graphql types
+# Int : 4바이트 정수
+# Float : 실수
+# String : UTF-8 문자열
+# Boolean true/false
+# ID : id값임을 명시적으로 표현, 내부적으로는 String 타입
+# 타입옆에 !를 붙이면 non-nullable 의미
+# 그외 열거형,사용자 지정 스칼라 타입 등.. 있음
+schema {
+    query: RootQuery
+    mutation: RootMutation
+}
+# RootQuery 조회 용도
+type RootQuery{
+    getUser(email:String!):UserInfo
+}
+# RootMutation 데이터를 변화시키는 행위에 대한 구문 (delete,update,insert)
+type RootMutation{
+    createUser(email:String!,name:String!,password:String!):UserInfo
+}
+# Type에
+type UserInfo{
+    id:ID!
+    email:String!
+    name:String!
+}

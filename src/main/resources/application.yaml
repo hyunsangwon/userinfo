@@ -27,3 +27,6 @@ graphql:
     mapping: /graphql
     enabled: true
     corsEnabled: true
+    exception-handlers-enabled: true
+    websocket:
+     enabled: false
