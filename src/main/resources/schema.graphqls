@@ -19,7 +19,7 @@ type RootQuery{
 type RootMutation{
     createUser(email:String!,name:String!,password:String!):UserInfo
 }
-# Type에
+# Type에 적은 속성별로 유동적이게 조회 가능
 type UserInfo{
     id:ID!
     email:String!
