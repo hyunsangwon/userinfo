@@ -10,3 +10,4 @@
 >> *  Dev Language : Kotlin
 >> *  Template Engine : Thymeleaf
 >> *  DB : MySql
+>> * REST API : graphQL
