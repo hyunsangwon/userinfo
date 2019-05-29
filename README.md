@@ -1,2 +1,2 @@
 ### userinfo
-##Spring boot+Kotlin+JPA+Mysql+Gradle+Graphiql
+## Spring boot+Kotlin+JPA+Mysql+Gradle+graphQL
