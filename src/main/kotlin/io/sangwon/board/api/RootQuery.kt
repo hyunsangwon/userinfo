@@ -13,5 +13,6 @@ import org.springframework.stereotype.Component
 class RootQuery(val userService: UserService) : GraphQLQueryResolver {
     /*schema 안에 정의된 메소드랑 이름이 같아야함 */
     fun getUser(email:String):UserInfo? = userService.getUserByEmail(email)
+
     fun allUsers():List<UserInfo>? = userService.userFindAll()
 }
