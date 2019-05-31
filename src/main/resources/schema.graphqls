@@ -12,7 +12,9 @@ schema {
     mutation: RootMutation
 }
 # RootQuery 조회 용도
+## []는 연속된 배열 형태가 출력된다는 것을 의미
 type RootQuery{
+    allUsers:[UserInfo]
     getUser(email:String!):UserInfo
 }
 # RootMutation 데이터를 변화시키는 행위에 대한 구문 (delete,update,insert)
