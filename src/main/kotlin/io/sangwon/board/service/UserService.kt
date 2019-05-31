@@ -4,6 +4,7 @@ package io.sangwon.board.service
 import io.sangwon.board.form.RegisterForm
 import io.sangwon.board.model.UserInfo
 import io.sangwon.board.repository.UserRespository
+import org.apache.catalina.User
 import org.springframework.stereotype.Service
 
 /**
@@ -31,6 +32,16 @@ class UserService(val userRespository: UserRespository){
         return userRespository.findAll()
     }
 
+    fun userUpdate(id:Int,name:String,password:String): UserInfo? {
+        val userInfo = userRespository.findById(id).get()
+        userInfo.name = name
+        userInfo.password = password
 
+        return userRespository.save(userInfo)
+    }
+
+    fun userDelete(id :Int){
+        userRespository.deleteById(id)
+    }
 
 }
