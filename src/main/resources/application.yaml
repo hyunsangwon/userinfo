@@ -12,6 +12,8 @@ spring:
     properties:
      hibernate.format_sql: true
      hibernate.jdbc.time_zone: Asia/Seoul
+     hibernate:
+       dialect: org.hibernate.dialect.MariaDB10Dialect
 
   thymeleaf:
     cache: false
