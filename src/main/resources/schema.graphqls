@@ -23,6 +23,7 @@ type RootMutation{
     userDelete(id:String!):String
 }
 # Type에 적은 속성별로 유동적이게 조회 가능
+## Entity에 있는 필드값에 있는것만 정의 가능
 type UserInfo{
     id:ID!
     email:String!
