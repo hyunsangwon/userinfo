@@ -27,6 +27,11 @@ spring:
       enabled: true
       poll-interval: 1s
 
+logging:
+  level:
+    root: WARN
+    org.springframework.web.client: DEBUG
+
 graphql:
   servlet:
     mapping: /graphql
