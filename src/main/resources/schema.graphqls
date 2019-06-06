@@ -19,7 +19,7 @@ type RootQuery{
 }
 # RootMutation 데이터를 변화시키는 행위에 대한 구문 (delete,update,insert)
 type RootMutation{
-    userUpdate(id:String!,name:String!,password:String!):UserInfo
+    userUpdate(id:String!,name:String!):UserInfo
     userDelete(id:String!):String
 }
 # Type에 적은 속성별로 유동적이게 조회 가능

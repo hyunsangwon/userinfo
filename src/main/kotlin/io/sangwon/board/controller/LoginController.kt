@@ -62,7 +62,8 @@ class LoginController(val userService:UserService){
     * BindingResult.hasErrors : 에러가 있는지 검사한다.
     * */
     @PostMapping("/join")
-    fun doJoin(@Valid @ModelAttribute("formVO") formVO : RegisterForm, br: BindingResult): ModelAndView{
+    fun doJoin(@Valid @ModelAttribute("formVO") formVO : RegisterForm,
+               br: BindingResult): ModelAndView{
         /* 이메일하고 비밀번호를 넘겨받음
         * 1. 이미 가입된 이메일인 확인
         * 2. 비밀번호가 서로 맞는지 확인 (html안에서도 체킹)

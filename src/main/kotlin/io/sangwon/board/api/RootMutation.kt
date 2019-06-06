@@ -14,8 +14,8 @@ import org.springframework.stereotype.Component
 class RootMutation(val userService: UserService) : GraphQLMutationResolver {
 
     /*schema 안에 정의된 메소드랑 이름이 같아야함 */
-    fun userUpdate (id:String,name:String,password:String):UserInfo?
-            = userService.userUpdate(id.toInt(),name,password)
+    fun userUpdate (id:String,name:String):UserInfo
+            = userService.userUpdate(id.toInt(),name)
 
     fun userDelete (id:String) : String{
         userService.userDelete(id.toInt())

@@ -22,4 +22,6 @@ class RegisterForm{
     var confirmPassword: String =""
 
     var name: String=""
+
+    var id: String=""
 }

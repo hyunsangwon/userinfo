@@ -31,7 +31,7 @@
     <title>Login</title>
 </head>
 <div style="height:100px"></div>
-<body><!--onsubmit="doLogin();return false;"-->
+<body>
 <!--/*@thymesVar id="loginVO" type="io.sangwon.board.form.LoginForm"*/-->
 <div class="container">
 <form th:action="@{/login}" th:method="post" th:object="${loginVO}" onSubmit="doLogin();return false;">
@@ -45,7 +45,11 @@
     <input th:field="*{password}" id="password" type="password" class="form-control" name="password" placeholder="Password">
 </div>
     <p th:errors="*{password}" class="alert alert-danger"></p>
-    <button class="btn btn-primary">Login</button>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-primary">Login</button>
+        </div>
+    </div>
 </form>
 <a th:href="@{/join}">Join Sangwon Company</a>
 </div>

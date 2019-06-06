@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service
  * Created by Sangwon Hyun on 2019-05-17
  * blizbloks.io
  */
-
 @Service
 class UserService(val userRespository: UserRespository){
 
@@ -32,10 +31,13 @@ class UserService(val userRespository: UserRespository){
         return userRespository.findAll()
     }
 
-    fun userUpdate(id:Int,name:String,password:String): UserInfo? {
+    fun userFindOne(id:Int): UserInfo {
+        return userRespository.findById(id).get()
+    }
+
+    fun userUpdate(id:Int,name:String): UserInfo{
         val userInfo = userRespository.findById(id).get()
         userInfo.name = name
-        userInfo.password = password
 
         return userRespository.save(userInfo)
     }
@@ -43,5 +45,6 @@ class UserService(val userRespository: UserRespository){
     fun userDelete(id :Int){
         userRespository.deleteById(id)
     }
+
 
 }
