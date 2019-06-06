@@ -46,7 +46,7 @@ class MainController(val userService: UserService){
     @PostMapping("/edit")
     fun doEdit(@ModelAttribute("formVO") formVO : RegisterForm) : ModelAndView{
 
-        userService.userUpdate(formVO.id.toInt(),formVO.name)
+        userService.userUpdate(formVO.userId.toInt(),formVO.name)
 
         return ModelAndView("redirect:/user/list")
     }

@@ -23,5 +23,5 @@ class RegisterForm{
 
     var name: String=""
 
-    var id: String=""
+    var userId: String=""
 }
