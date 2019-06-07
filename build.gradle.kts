@@ -59,7 +59,9 @@ dependencies {
 	implementation("com.graphql-java-kickstart:graphql-java-tools:$graphqlJavaToolsVersion")
 	implementation("com.graphql-java-kickstart:graphiql-spring-boot-starter:$graphqlJavaToolsVersion")
 	implementation("com.graphql-java-kickstart:graphql-java-servlet:7.4.1")
-	
+	/*spring security*/
+	implementation("org.springframework.boot:spring-boot-starter-security")
+
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
